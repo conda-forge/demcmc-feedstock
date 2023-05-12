@@ -1,5 +1,5 @@
 {% set name = "demcmc" %}
-{% set version = "1.0.0" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/demcmc-{{ version }}.tar.gz
-  sha256: e64eda8ad27dbf4f7f5b21f6607e7f8f4071d22e4e4c4bf0b6be1718259a8cb9
+  sha256: 2cf7f99334cb5c1a55fb3eec21b23a0ec28c2f66410bbec353c6ab3c4ddaf6f8
 
 build:
   noarch: python
