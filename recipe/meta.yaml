@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/demcmc-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/demcmc-{{ version }}.tar.gz
   sha256: 2cf7f99334cb5c1a55fb3eec21b23a0ec28c2f66410bbec353c6ab3c4ddaf6f8
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - astropy-base
     - emcee
     - matplotlib-base
@@ -39,6 +39,7 @@ test:
   requires:
     - pip
     - tox
+    - python {{ python_min }}
 
 about:
   summary: Differential Emission Measure calculations using Monte Carlo methods.
